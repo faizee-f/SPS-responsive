@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <title>SPS Form</title>
+</head>
+
+<body>
+    <div class="container-fluid headertop">
+        <h2 class="text-center pt-4">SPS.</h2>
+    </div>
+    <div class=" d-flex justify-content-center container-fluid ">
+        <div class=" col-lg-7 border  shadow-lg p-3 mb-5 bg-white rounded">
+            <h2 class="head pb-4 text-center">REGISTRATION</h2>
+            <form id="submit-form" class="container p-5" action="">
+                <div class="col-md-12 row">
+                    <input type="text" required placeholder="Full Name" name="Name" class="form-c" onchange="validateName(this);">
+                    <span id="errorname" class="alert-red"></span>
+                </div>
+                <div class="col-md-12 row justify-content-between">
+                    <div class="col-md-5">
+                        <input type="text" required placeholder="Place" name="Place" class="form-c " onchange="validatePlace(this);">
+                        <span id="errorplace" class="alert-red"></span>
+                    </div>
+                    <div class="col-md-5">
+                        <select name="Gender" class="col-md-12">
+                            <option selected value="m" disabled>Gender</option>
+                            <option value="MALE">Male</option>
+                            <option value="Female">Female</option>
+                          </select>
+                    </div>
+                </div>
+                <div class="col-md-12 row">
+                    <input type="text" required placeholder="Email" id="email" name="Email" onchange="validateEmail(this);" />
+                    <span class="alert-red" id="errormail"></span>
+                </div>
+                <div class="col-md-12 row justify-content-between">
+                    <div class="col-md-5">
+                        <input type="text" required placeholder="Contact No" name="Contact No" class="form-c col-md-12" onchange="validateNumber(this);">
+                        <span class="alert-red" id="errornumber"></span>
+                    </div>
+                    <div class="col-md-5">
+                        <select name="Employe Status" class="col-md-12">
+                            <option selected value="" disabled>Employment Status</option>
+                            <option value="Employes">Employed</option>
+                            <option value="Fresher">Fresher</option>
+                            <option value="Student">Student</option>
+                          </select>
+                    </div>
+                </div>
+                <div class="col-md-12 row">
+                    <select name="Education Qualification" required class="col-md-12"> 
+                        <option selected value="m" disabled>Educational Qualification</option>
+                        <option value="mca">MCA/MSc</option>
+                        <option value="bca">BCA/BSc</option>
+                        <option value="btech">Btech</option>
+                        <option value="plus2">Plus Two</option>
+                        <option value="diploma">Diploma</option>
+                        <option value="other">Other.</option>
+                      </select>
+                </div>
+                <div class="col-md-12">
+                    <input type="text" required placeholder="Name of College / Organisation " name="Name of College">
+                    <input type="number " required placeholder="Year of Graduation " class="form-c " min="1900" max="2099" name="Year of Graduation">
+                    <input type="textarea " required placeholder="Tell us more about you " class="form-c " name="More about">
+                    <input type="textarea " required placeholder="Why do you want to join SPS?" class="form-c " name="Why joining SPS">
+                    <input type="textarea " required placeholder="What motives you to work hard every day? " class="form-c " name="What motivates you">
+                </div>
+                <div class="col-md-12">
+                    <select name="Source" required class="col-md-12">
+                        
+                        <option selected value="f" disabled>From where did you learn about SPS?</option>
+                        <option value="CR YT">Crossroads Youtube Channel</option>
+                        <option value="YT">Youtube</option>
+                        <option value="FB">Facebook</option>
+                        <option value="Friends">Friends</option>
+                        <option value="WA">Whatsapp Group</option>
+                      </select>
+                </div>
+                <div class="custom-control custom-checkbox mb-3">
+                    <input type="checkbox" required class="custom-control-input" id="customCheck" name="accept">
+                    <label class="custom-control-label" for="customCheck">I agree that I have read and understood all the</label><a href="">FAQs</a>
+                </div>
+                <button type="submit" class="w-100 register">REGISTER</button>
+            </form>
+
+        </div>
+    </div>
+    <script>
+        function validateName(inputtxt) {
+            var letters = /^[A-Za-z]+$/;
+            if (inputtxt.value.match(letters)) {
+                document.getElementById('errorname').innerHTML = "";
+                return true;
+            } else {
+                document.getElementById('errorname').innerHTML = "Enter valid name";
+                return false;
+            }
+        }
+
+        function validatePlace(inputtxt) {
+            var letters = /^[A-Za-z]+$/;
+            if (inputtxt.value.match(letters)) {
+                document.getElementById('errorplace').innerHTML = "";
+                return true;
+            } else {
+                document.getElementById('errorplace').innerHTML = "Enter valid place";
+                return false;
+            }
+        }
+
+        function validateEmail(emailField) {
+            var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+
+            if (reg.test(emailField.value) == false) {
+                document.getElementById('errormail').innerHTML = "Invalid Email ";
+                return false;
+            } else {
+                document.getElementById('errormail').innerHTML = " ";
+            }
+            return true;
+
+        }
+
+        function validateNumber(inputtxt) {
+            var phoneno = /^\d{10}$/;
+            if ((inputtxt.value.match(phoneno))) {
+                document.getElementById('errornumber').innerHTML = "";
+                return true;
+            } else {
+                document.getElementById('errornumber').innerHTML = "Invalid format ";
+                return false;
+            }
+        }
+    </script>
+    <script>
+        $("#submit-form").submit((e) => {
+            e.preventDefault()
+            $.ajax({
+                url: "https://script.google.com/macros/s/AKfycbymdhV2My0Ld6K7GK8jxOZnRFrmAH98Zo2t_TvG1Tclbbha167zRO90z6GOrDQeR7CO/exec",
+                data: $("#submit-form").serialize(),
+                method: "post",
+                success: function(response) {
+                    alert("Form submitted successfully")
+                    window.location.reload()
+                        //window.location.href="https://google.com"
+                },
+                error: function(err) {
+                    alert("Something Error")
+
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>
